@@ -57,6 +57,22 @@ section h3 {
   color: #1a237e;
 }
 
+.activity-filters {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 12px;
+}
+
+.activity-filters .search-group {
+  grid-column: 1 / -1;
+}
+
+.activity-count {
+  margin: 0 0 12px;
+  color: #666;
+  font-size: 14px;
+}
+
 .activity-card {
   margin-bottom: 15px;
   padding: 15px;
@@ -70,8 +86,24 @@ section h3 {
   color: #0066cc;
 }
 
+.activity-category {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background-color: #e8eaf6;
+  color: #1a237e;
+  font-size: 13px;
+}
+
 .activity-card p {
   margin-bottom: 8px;
+}
+
+.empty-state {
+  padding: 16px;
+  color: #666;
+  text-align: center;
 }
 
 /* New styles for participants section */
@@ -143,6 +175,7 @@ section h3 {
 .form-group input,
 .form-group select {
   width: 100%;
+  min-width: 0;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -197,4 +230,22 @@ footer {
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
+
+  section {
+    padding: 16px;
+  }
+
+  .activity-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-filters .search-group {
+    grid-column: auto;
+  }
 }

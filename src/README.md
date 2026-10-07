@@ -5,6 +5,8 @@ A super simple FastAPI application that allows students to view and sign up for 
 ## Features
 
 - View all available extracurricular activities
+- Search activities and filter by category
+- Sort activities by name or recurring schedule
 - Sign up for activities
 
 ## Getting Started
@@ -46,5 +48,10 @@ The application uses a simple data model with meaningful identifiers:
 2. **Students** - Uses email as identifier:
    - Name
    - Grade level
+
+Activities also include a category and structured recurring schedule metadata
+for filtering and sorting. `schedule_days` uses ISO weekday numbers (Monday is
+1, Sunday is 7), and `start_time` uses 24-hour `HH:MM`; the human-readable
+`schedule` remains available for display.
 
 All data is stored in memory, which means data will be reset when the server restarts.
